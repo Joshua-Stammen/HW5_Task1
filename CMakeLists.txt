@@ -3,5 +3,5 @@ project(HW5_Task1)
 
 set(CMAKE_CXX_STANDARD 11)
 
-set(SOURCE_FILES main.cpp cmake-build-debug/Roman.cpp cmake-build-debug/Roman.h)
+set(SOURCE_FILES main.cpp Roman.cpp Roman.h)
 add_executable(HW5_Task1 ${SOURCE_FILES})
