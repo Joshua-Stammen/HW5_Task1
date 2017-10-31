@@ -1,6 +1,6 @@
+#include "Roman.h"
 #include <iostream>
 #include <string>
-#include "Roman.h"
 
 using namespace std;
 
@@ -12,21 +12,21 @@ void testConstructor();
 bool checkTest(string testName, int whatItShouldBe, const Roman& obj);
 bool checkTest(string testName, string whatItShouldBe, string whatItIs);
 void testOperatorPlus();
-//void testOperatorPlusEqual();
-//void testOperatorIncrement();
-//void testConsoleIO();
-
+void testOperatorPlusEqual();
+void testOperatorIncrement();
+void testConsoleIO();
 /* This MUST be in a different source and header file */
+
 
 /* Main Function */////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 int main()
 {
 
     testConstructor();
-    //testOperatorPlus();
-    //testOperatorPlusEqual();
-    //testOperatorIncrement();
-    //testOutput();
+    testOperatorPlus();
+    testOperatorPlusEqual();
+    testOperatorIncrement();
+    testOutput();
     return 0;
 };
 
@@ -50,7 +50,7 @@ void testConstructor()
     checkTest("testConstructor #3", 4332, b);
 
 }
-/*
+
 void testOperatorPlus()
 {
 	//Test adding two roman objects
@@ -128,6 +128,10 @@ bool checkTest(string testName, int whatItShouldBe, const Roman& obj )
     }
 }
 
+void testOutput() {
+
+}
+
 bool checkTest(string testName, string whatItShouldBe, string whatItIs )
 {
     if (whatItShouldBe == whatItIs)
@@ -158,69 +162,3 @@ void testOperatorPlus() {
 	checkTest("testOutput #2", "VII", b);
 }*/
 
-
-
-___________________________________________________________________________________________________________________________
-
-#ifndef ROMAN_H
-#define ROMAN_H
-#include <iostream>
-#include <string>
-using namespace std;
-
-class Roman
-{
-private:
-    unsigned int value;  //The roman numeral itself isn't stored.  Instead, we just store the integer that corresponds to it.
-public:
-    //The default constructor that allows us to make empty objects.
-    Roman():value(0){}
-    //The constructor which accepts a string and  converts it internally to an integer.  It actually just forwards it onto convertFromRoman()
-    Roman(const string& romanString):value(0){convertFromRoman(romanString);}
-
-    void convertFromRoman(const string& romanValue);  //The method that helps us take an roman numeral in a string and convert it into the integer.
-
-    //string convertToRoman() const;  //The method that helps us take an integer and turn it into a roman numeral
-
-    //Roman operator+(const Roman&) const;  //The left and right operands are Roman objects
-    //Roman operator+(const int) const; //The left operand is a Roman object, the right is an int number.
-    //void operator +=(const Roman&);  //The left and right operands are Roman objects, but the left operand can change.
-    //void operator +=(const int);  //The left operand is a Roman object, the right is an int number.  The left operand can change.
-    //Roman operator++();  //The prefix ++ operator
-
-    //These two are for testing purposes only.  They have been given to you.
-    friend bool checkTest(string, int, const Roman&);  //A testing function.  It is friended so it can access the class.
-    friend void testOutput(); //Another test function that needs to access private class members.
-};
-
-#endif
-
-
-
-
-
-______________________________________________________________________________________________________________
-
-#include "Roman.h"
-#include <iostream>
-#include <string>
-using namespace std;
-
-//Roman::Roman():value(0){}
-
-void Roman::convertFromRoman(const string& romanValue)
-{
-    for(int i = 0; i<romanValue.length(); i++)
-    {
-        switch(romanValue.at(i))
-        {
-            case 'I': value += 1;break;
-            case 'V': value += 5;break;
-            case 'X': value += 10;break;
-            case 'L': value += 50;break;
-            case 'C': value += 100;break;
-            case 'D': value += 500;break;
-            case 'M': value += 1000;
-        }
-    }
-}
