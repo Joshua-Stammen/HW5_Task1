@@ -16,8 +16,8 @@ int main()
 {
     testConstructor();
     testOperatorPlus();
-    testOperatorPlusEqual();
-    testOperatorIncrement();
+    //testOperatorPlusEqual();
+   // testOperatorIncrement();
     //testOutput();
     return 0;
 };
@@ -63,6 +63,7 @@ void testOperatorPlus() {
     //make sure the right operand wasn't modified
     checkTest("testOperatorPlus #7", 16, a);
 }
+/*
 void testOperatorPlusEqual()
 {
     //Test adding two roman objects
@@ -77,7 +78,7 @@ void testOperatorPlusEqual()
     b += 17;
     checkTest("testOperatorPlusEqual #3", 1218, b);
 }
-/*
+
 void testOperatorIncrement()
 {
     //Test prefix increment
