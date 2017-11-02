@@ -15,7 +15,7 @@ void testConsoleIO();
 int main()
 {
     testConstructor();
-    testOperatorPlus();
+    //testOperatorPlus();
     //testOperatorPlusEqual();
    // testOperatorIncrement();
     //testOutput();
