@@ -23,25 +23,10 @@ int main()
 };
 
 //testConsoleIO();
-//This helps with testing, do not modify.
-void testConstructor()
-{
-//Test to make sure that empty objects are set to zero.
-    Roman blank;
-    checkTest("testConstructor #1", 0, blank);
-
-//Test reading in a number.
-    Roman a("LXVI");
-    checkTest("testConstructor #2", 66, a);
-
-//Test a bigger number.
-    Roman b("MMMDDCCLLXXVVII");
-    checkTest("testConstructor #3", 4332, b);
-
-}
 
 
-void testOperatorPlus() {
+
+/*void testOperatorPlus() {
     //Test adding two roman objects
     Roman a("XVI");
     Roman b("MDCLXVI");
