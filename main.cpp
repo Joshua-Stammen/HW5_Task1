@@ -8,25 +8,22 @@ void testConstructor();
 void testOperatorPlus();
 void testOperatorPlusEqual();
 void testOperatorIncrement();
-void testConsoleIO();
 
 
 /* Main Function */////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 int main()
 {
     testConstructor();
-    //testOperatorPlus();
-    //testOperatorPlusEqual();
-   // testOperatorIncrement();
+    testOperatorPlus();
+    testOperatorPlusEqual();
+    testOperatorIncrement();
     //testOutput();
+
     return 0;
 };
 
-//testConsoleIO();
 
-
-
-/*void testOperatorPlus() {
+void testOperatorPlus() {
     //Test adding two roman objects
     Roman a("XVI");
     Roman b("MDCLXVI");
@@ -48,7 +45,7 @@ int main()
     //make sure the right operand wasn't modified
     checkTest("testOperatorPlus #7", 16, a);
 }
-/*
+
 void testOperatorPlusEqual()
 {
     //Test adding two roman objects
@@ -74,19 +71,18 @@ void testOperatorIncrement()
     checkTest("testOperatorIncrement #2", 1053, b);
 }
 
-void testOutput()
-{
-    Roman a("MDCLXVI");
-    string b = a.convertToRoman();
-    checkTest("testOutput #1", "MDCLXVI", b);
+///void testOutput()
+//{
+    //Roman a("MDCLXVI");
+    //string b = a.convertToRoman();
+    //checkTest("testOutput #1", "MDCLXVI", b);
 
     //This is really the value 7.  Your code should correctly read this in and convert it back to VII.
-    Roman c("IIIIIII");
-    b = c.convertToRoman();
-    checkTest("testOutput #2", "VII", b);
-}
+    //Roman c("IIIIIII");
+    //b = c.convertToRoman();
+    //checkTest("testOutput #2", "VII", b);
+//}
 
- */
 
 
 
