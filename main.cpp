@@ -4,10 +4,7 @@
 using namespace std;
 
 
-void testConstructor();
-void testOperatorPlus();
-void testOperatorPlusEqual();
-void testOperatorIncrement();
+
 
 
 /* Main Function */////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -15,13 +12,12 @@ int main()
 {
     testConstructor();
     testOperatorPlus();
-    testOperatorPlusEqual();
+    //testOperatorPlusEqual();
     testOperatorIncrement();
     //testOutput();
 
     return 0;
 };
-
 
 void testOperatorPlus() {
     //Test adding two roman objects
@@ -30,7 +26,7 @@ void testOperatorPlus() {
     Roman c = a + b;
     checkTest("testOperatorPlus #1", 1682, c);
     //make sure the left and right operands weren't modified
-    checkTest("testOperatorPlus #2", 16, a);
+     checkTest("testOperatorPlus #2", 16, a);
     checkTest("testOperatorPlus #3", 1666, b);
 
     //Test adding an object with an int
@@ -45,7 +41,7 @@ void testOperatorPlus() {
     //make sure the right operand wasn't modified
     checkTest("testOperatorPlus #7", 16, a);
 }
-
+/*
 void testOperatorPlusEqual()
 {
     //Test adding two roman objects
@@ -60,7 +56,7 @@ void testOperatorPlusEqual()
     b += 17;
     checkTest("testOperatorPlusEqual #3", 1218, b);
 }
-
+*/
 void testOperatorIncrement()
 {
     //Test prefix increment
