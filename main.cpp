@@ -1,24 +1,25 @@
 #include "Roman.h"
 #include <iostream>
+#include <string>
 
 using namespace std;
-
-
-
-
 
 /* Main Function */////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 int main()
 {
     testConstructor();
     testOperatorPlus();
-    //testOperatorPlusEqual();
+    testOperatorPlusEqual();
     testOperatorIncrement();
-    //testOutput();
+    testOutput();
 
     return 0;
 };
 
+/*!
+ * testOperatorPlus: Conduts 7 tests using the opartor + by adding two objects together, 
+ *                   a object to an integer, and another oject to an integer.  
+ */
 void testOperatorPlus() {
     //Test adding two roman objects
     Roman a("XVI");
@@ -26,7 +27,7 @@ void testOperatorPlus() {
     Roman c = a + b;
     checkTest("testOperatorPlus #1", 1682, c);
     //make sure the left and right operands weren't modified
-     checkTest("testOperatorPlus #2", 16, a);
+    checkTest("testOperatorPlus #2", 16, a);
     checkTest("testOperatorPlus #3", 1666, b);
 
     //Test adding an object with an int
@@ -41,7 +42,10 @@ void testOperatorPlus() {
     //make sure the right operand wasn't modified
     checkTest("testOperatorPlus #7", 16, a);
 }
-/*
+/*!
+ * testOperatorPlusEqual: Conduts 3 tests using the opartor += by incrementing the a integer by b, and
+ *                        by incrementing the integer b by 17.  
+ */
 void testOperatorPlusEqual()
 {
     //Test adding two roman objects
@@ -56,7 +60,10 @@ void testOperatorPlusEqual()
     b += 17;
     checkTest("testOperatorPlusEqual #3", 1218, b);
 }
-*/
+/*!
+ * testOperatorPlusEqual: Conduts 2 tests using the opartor ++ by incrementing the a 
+ *                        integer and assigning the new value of a to b.
+ */
 void testOperatorIncrement()
 {
     //Test prefix increment
@@ -66,19 +73,19 @@ void testOperatorIncrement()
     checkTest("testOperatorIncrement #1", 1053, a);
     checkTest("testOperatorIncrement #2", 1053, b);
 }
-
-///void testOutput()
-//{
-    //Roman a("MDCLXVI");
-    //string b = a.convertToRoman();
-    //checkTest("testOutput #1", "MDCLXVI", b);
+/*!
+ * testOperatorPlusEqual: tests the convertToRoman method twice, and then checks to see if the result was correct
+ */
+void testOutput()
+{
+    Roman a("MDCLXVI");
+    string bob = a.convertToRoman();
+    checkTest("testOutput #1", "MDCLXVI", bob);
 
     //This is really the value 7.  Your code should correctly read this in and convert it back to VII.
-    //Roman c("IIIIIII");
-    //b = c.convertToRoman();
-    //checkTest("testOutput #2", "VII", b);
-//}
-
-
-
+    Roman c("IIIIIII");
+    bob = c.convertToRoman();
+    
+    checkTest("testOutput #2", "VII", bob);
+}
 
